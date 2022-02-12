@@ -1,5 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+import 'package:travelapp/components/my_header.dart';
 import '../constant.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -8,60 +10,95 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: lightWhite,
-      //   elevation: 0,
-      //   actions: [
-      //     Icon(Icons.notifications),
-      //     Icon(Icons.widgets),
-      //   ],
-      // ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          color: lightWhite,
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              top: 0,
-              left: 10,
-              child: Transform.rotate(
-                angle: -4.35 * math.pi / 180,
-                child: Image.asset(
-                  'assets/images/light_hand.png',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Positioned(
-              top: 80,
-              left: 30,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              const MyHeader(),
+              Row(
                 children: [
-                  Text(
-                    "Welcome,",
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700,
+                  Container(
+                    margin: EdgeInsets.only(left: 25, top: 25),
+                    child: Text(
+                      "Saved Places",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xff545454),
+                      ),
                     ),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    "Charlie",
-                    style: TextStyle(
-                      fontSize: 35,
-                    ),
-                    textAlign: TextAlign.left,
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
+              Container(
+                height: 260,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const [
+                        MyPlace(
+                          imageTitle: "JAPAN",
+                          imageAsset: "assets/images/Japan.png",
+                        ),
+                        MyPlace(
+                          imageTitle: "BARCELONA",
+                          imageAsset: "assets/images/Barcelona.png",
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const [
+                        MyPlace(
+                          imageTitle: "GREECE",
+                          imageAsset: "assets/images/Greece.png",
+                        ),
+                        MyPlace(
+                          imageTitle: "ROME",
+                          imageAsset: "assets/images/Rome.png",
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
+    );
+  }
+}
+
+class MyPlace extends StatelessWidget {
+  final String imageAsset;
+  final String imageTitle;
+
+  const MyPlace({Key? key, required this.imageAsset, required this.imageTitle})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Image.asset(
+          imageAsset,
+          fit: BoxFit.cover,
+        ),
+        Positioned(
+          left: 10,
+          top: 20,
+          child: Text(
+            imageTitle,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
