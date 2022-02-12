@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travelapp/screens/my_intro_screen.dart';
+
+import 'screens/my_homepage_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,21 +14,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // home: MyIntroScreen(),
       home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({ Key? key }) : super(key: key);
+// class MyHomePage extends StatelessWidget {
+//   const MyHomePage({ Key? key }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
       
-    );
-  }
-}
+//     );
+//   }
+// }
