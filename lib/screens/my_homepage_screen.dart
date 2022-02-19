@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:travelapp/components/my_header.dart';
+import 'package:travelapp/components/my_saved_places.dart';
 import '../constant.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -16,13 +15,32 @@ class MyHomePage extends StatelessWidget {
             children: [
               const MyHeader(),
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 25, top: 25),
-                    child: Text(
+                    margin: const EdgeInsets.only(left: 20, top: 20),
+                    child: const Text(
                       "Saved Places",
                       style: TextStyle(
                         fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xff545454),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const MySavedPlaces(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(left: 20, top: 20),
+                    child: const Text(
+                      "Travel Buddies",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
                         color: Color(0xff545454),
                       ),
                     ),
@@ -30,35 +48,30 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               Container(
-                height: 260,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                margin: const EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.all(15),
+                alignment: Alignment.topLeft,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: const [
-                        MyPlace(
-                          imageTitle: "JAPAN",
-                          imageAsset: "assets/images/Japan.png",
-                        ),
-                        MyPlace(
-                          imageTitle: "BARCELONA",
-                          imageAsset: "assets/images/Barcelona.png",
-                        ),
-                      ],
+                    OutlinedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        enableFeedback: true,
+                        fixedSize: const Size(70, 70),
+                      ),
+                      child: const Icon(
+                        Icons.add,
+                        color: Color(0xff828282),
+                      ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: const [
-                        MyPlace(
-                          imageTitle: "GREECE",
-                          imageAsset: "assets/images/Greece.png",
-                        ),
-                        MyPlace(
-                          imageTitle: "ROME",
-                          imageAsset: "assets/images/Rome.png",
-                        ),
-                      ],
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          MyBuddy(),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -71,30 +84,88 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class MyPlace extends StatelessWidget {
-  final String imageAsset;
-  final String imageTitle;
-
-  const MyPlace({Key? key, required this.imageAsset, required this.imageTitle})
-      : super(key: key);
+class MyBuddy extends StatelessWidget {
+  const MyBuddy({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.topLeft,
       children: [
-        Image.asset(
-          imageAsset,
-          fit: BoxFit.cover,
+        Container(
+          margin: const EdgeInsets.only(left: 20, right: 35),
+          height: 150,
+          width: 100,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8),
+              topRight: Radius.circular(50),
+            ),
+            color: lightGreen,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text(
+                "Name",
+                style: TextStyle(
+                  color: lightWhite,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 10,     
+                ),
+              ),
+              Text(
+                "Ashok",
+                style: TextStyle(
+                  color: lightWhite,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+              Text(
+                "Age",
+                style: TextStyle(
+                  color: lightWhite,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 10,
+                ),
+              ),
+              Text(
+                "27",
+                style: TextStyle(
+                  color: lightWhite,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+              Text(
+                "Status",
+                style: TextStyle(
+                  color: lightWhite,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 10,
+                ),
+              ),
+              Text(
+                "Friend",
+                style: TextStyle(
+                  color: lightWhite,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
         ),
         Positioned(
-          left: 10,
-          top: 20,
-          child: Text(
-            imageTitle,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+          left: 55,
+          child: SizedBox(
+            height: 150,
+            width: 100,
+            child: Image.asset(
+              'assets/images/friend1.png',
+              fit: BoxFit.contain,
             ),
           ),
         ),

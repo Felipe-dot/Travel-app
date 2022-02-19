@@ -13,7 +13,7 @@ class MyHeader extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: lightWhite,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
@@ -37,7 +37,7 @@ class MyHeader extends StatelessWidget {
             top: 15,
             left: 280,
             child: Row(
-              children: [
+              children: const [
                 Icon(
                   Icons.notifications,
                   size: 24,
@@ -59,7 +59,7 @@ class MyHeader extends StatelessWidget {
             left: 30,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   "Welcome,",
                   style: TextStyle(
@@ -82,7 +82,7 @@ class MyHeader extends StatelessWidget {
             top: 230,
             left: 15,
             child: Container(
-              alignment: Alignment.center,
+              padding: const EdgeInsets.only(left: 5),
               height: 41,
               width: 330,
               decoration: BoxDecoration(
@@ -90,22 +90,21 @@ class MyHeader extends StatelessWidget {
                   color: Colors.black.withOpacity(0.5),
                   width: 2.0,
                 ),
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
               ),
-              child: ListTile(
-                leading: Icon(
-                  Icons.search,
-                  size: 25,
-                ),
-                title: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Search",
-                    hintStyle: TextStyle(
-                      fontSize: 20,
-                      fontStyle: FontStyle.italic,
-                    ),
-                    border: InputBorder.none,
+              child: const TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.search_sharp,
+                    size: 25,
+                    color: lightBlack,
                   ),
+                  hintText: "Search",
+                  hintStyle: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                  ),
+                  border: InputBorder.none,
                 ),
               ),
             ),
