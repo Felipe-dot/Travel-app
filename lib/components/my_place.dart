@@ -11,9 +11,14 @@ class MyPlace extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          imageAsset,
-          fit: BoxFit.cover,
+        GestureDetector(
+          child: Image.asset(
+            imageAsset,
+            fit: BoxFit.cover,
+          ),
+          onTap: () {
+            print("ESTOU FUNCIONANDO");
+          },
         ),
         Positioned(
           left: 10,
