@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travelapp/screens/my_intro_screen.dart';
 
+import 'package:travelapp/screens/my_intro_screen.dart';
 import 'screens/my_homepage_screen.dart';
+import 'screens/my_slider_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: MyIntroScreen(),
-      home: MyHomePage(),
+      home: const MySliderScreen(),
     );
   }
 }
