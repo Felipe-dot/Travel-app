@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:travelapp/screens/my_intro_screen.dart';
 import 'screens/my_homepage_screen.dart';
 import 'screens/my_slider_screen.dart';
 
@@ -19,8 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: MyIntroScreen(),
-      home: const MySliderScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MySliderScreen(),
+        '/myHomePage': (context) => const MyHomePage(),
+      },
     );
   }
 }

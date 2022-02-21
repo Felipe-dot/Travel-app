@@ -12,42 +12,36 @@ class MySliderScreen extends StatefulWidget {
 class _MySliderScreenState extends State<MySliderScreen> {
   String? swipeDirection;
   int currentPage = 0;
-  List<Widget> myPages = [
+  List<Widget> myPages = const [
     MyIntroScreen(),
     MyIntroScreen(),
     MyIntroScreen(),
   ];
 
-  void _onDragEnd(DragEndDetails details) {}
-
   void _onPanUpdate(DragUpdateDetails details) {
     setState(() {
       swipeDirection = details.delta.dx < 0 ? 'left' : 'right';
     });
-
-    // Swiping in right direction.
-    if (details.delta.dx > 0) {}
-
-    // Swiping in left direction.
-    if (details.delta.dx < 0) {}
   }
 
   void _onPanEnd(DragEndDetails details) {
+    //handle swipe left event
     if (swipeDirection == 'left') {
       if (currentPage < myPages.length - 1) {
         setState(() {
           currentPage++;
         });
+      } else {
+        Navigator.pushNamed(context, '/myHomePage');
       }
-      //handle swipe left event
     }
+    //handle swipe right event
     if (swipeDirection == 'right') {
       if (currentPage > 0) {
         setState(() {
           currentPage--;
         });
       }
-      //handle swipe right event
     }
   }
 

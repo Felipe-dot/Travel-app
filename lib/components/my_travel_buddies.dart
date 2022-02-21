@@ -20,18 +20,24 @@ class _MyTravelBuddiesState extends State<MyTravelBuddies> {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            OutlinedButton(
-              onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                enableFeedback: true,
-                fixedSize: const Size(70, 70),
-              ),
-              child: const Icon(
-                Icons.add,
-                color: Color(0xff828282),
-              ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    enableFeedback: true,
+                    fixedSize: const Size(70, 70),
+                  ),
+                  child: const Icon(
+                    Icons.add,
+                    color: Color(0xff828282),
+                  ),
+                ),
+              ],
             ),
             const MyBuddy(
               myBuddyImage: 'assets/images/friend1.png',
