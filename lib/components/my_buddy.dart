@@ -38,52 +38,76 @@ class MyBuddy extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Text(
-                "Name",
-                style: TextStyle(
-                  color: lightWhite,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 10,
+              Container(
+                margin: const EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Name",
+                      style: TextStyle(
+                        color: lightWhite,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10,
+                      ),
+                    ),
+                    Text(
+                      myBuddyName,
+                      style: const TextStyle(
+                        color: lightWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Text(
-                myBuddyName,
-                style: const TextStyle(
-                  color: lightWhite,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
+              Container(
+                margin: const EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Age",
+                      style: TextStyle(
+                        color: lightWhite,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10,
+                      ),
+                    ),
+                    Text(
+                      myBuddyAge,
+                      style: const TextStyle(
+                        color: lightWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const Text(
-                "Age",
-                style: TextStyle(
-                  color: lightWhite,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 10,
-                ),
-              ),
-              Text(
-                myBuddyAge,
-                style: const TextStyle(
-                  color: lightWhite,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-              ),
-              const Text(
-                "Status",
-                style: TextStyle(
-                  color: lightWhite,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 10,
-                ),
-              ),
-              Text(
-                myBuddyStatus,
-                style: const TextStyle(
-                  color: lightWhite,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
+              Container(
+                margin: const EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Status",
+                      style: TextStyle(
+                        color: lightWhite,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10,
+                      ),
+                    ),
+                    Text(
+                      myBuddyStatus,
+                      style: const TextStyle(
+                        color: lightWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -104,4 +128,3 @@ class MyBuddy extends StatelessWidget {
     );
   }
 }
-
