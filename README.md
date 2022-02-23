@@ -13,7 +13,7 @@ Um layout do dribbble desenvolvido em flutter.
 git clone git@github.com:Felipe-dot/Travel-app.git
 
 # Entrar no diretório
-cd p4a1-Felipe-dot
+cd Travel-app
 
 # Baixar os pacotes
 flutter pub get
