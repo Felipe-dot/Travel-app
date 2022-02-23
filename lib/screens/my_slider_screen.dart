@@ -13,9 +13,18 @@ class _MySliderScreenState extends State<MySliderScreen> {
   String? swipeDirection;
   int currentPage = 0;
   List<Widget> myPages = const [
-    MyIntroScreen(),
-    MyIntroScreen(),
-    MyIntroScreen(),
+    MyIntroScreen(
+      title: "New Adventures",
+      subtitle: "Pack your things and make more memories Outdoor",
+    ),
+    MyIntroScreen(
+      title: "New Friends",
+      subtitle: "Make friends around the world",
+    ),
+    MyIntroScreen(
+       title: "Discover the world",
+       subtitle: "Swipe one more time to enjoy the app",
+    ),
   ];
 
   void _onPanUpdate(DragUpdateDetails details) {

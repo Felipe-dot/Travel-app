@@ -35,21 +35,26 @@ class MyHeader extends StatelessWidget {
           ),
           Positioned(
             top: 15,
-            left: 280,
+            left: 260,
             child: Row(
-              children: const [
-                Icon(
-                  Icons.notifications,
-                  size: 24,
-                  color: Color(0xff545454),
+              children: [
+                IconButton(
+                  enableFeedback: true,
+                  icon: const Icon(
+                    Icons.notifications,
+                    size: 24,
+                    color: Color(0xff545454),
+                  ),
+                  onPressed: () {},
                 ),
-                SizedBox(
-                  width: 15,
-                ),
-                Icon(
-                  Icons.widgets,
-                  size: 24,
-                  color: Color(0xff545454),
+                IconButton(
+                  enableFeedback: true,
+                  icon: const Icon(
+                    Icons.widgets,
+                    size: 24,
+                    color: Color(0xff545454),
+                  ),
+                  onPressed: () {},
                 ),
               ],
             ),
